@@ -15,7 +15,7 @@ with open(sys.argv[1], 'r') as f:
     Tall = T[-1] - T[0]                         # seconds
     Pavr = round(sum(P) / len(P), 2)            # mW
     Ptotal = round(sum(Ph)/(1000*3600), 2)      # mWh
-    Pcon = round(Ptotal * Tall / 3600, 2)       # mWh
+    Pcon = round(Ptotal * 3600 / Tall , 2)      # mWh
 
     pyplot.plot(T, P)
     pyplot.title('Power consumption over time (' + str(Tall) + "s).  \nMax I:" + str(Imax)\
